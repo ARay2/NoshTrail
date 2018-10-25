@@ -1,0 +1,921 @@
+.restaurant_page{
+	background-color: #f5f5f5;
+}
+/*Navigation bar format is detailed below */
+.top_navigation_bar .navbar .well {
+	width:100%;
+	max-height: 35%;
+	background-image: url("IMG-20170622-WA0000.jpg");
+	background-size: cover;
+	background-position: center;
+}
+.top_navigation_bar .navbar-header{
+	width: 90%;
+	margin-left: 5%;
+}
+.homepage [class="link_main_pg"]{
+	color: yellow;
+	text-decoration: none;
+	float: left;
+	text-shadow: 2px 2px black;
+	font-size: 300%;
+}
+.homepage [class="menu"]{
+	float: right;
+	padding-right: 27px;
+ 	position: relative;
+	display: inline-block;
+}
+.homepage [class="sign_in_btn"] {
+	color: black;
+	font-size: 150%;
+}
+.menu i{
+	color: black;
+	float: right;
+	font-size: 120%;
+	margin-top: 4%;
+}
+.homepage [class="dropdown_btn"]{
+	color: black;
+	float: right;
+	font-size: 100%;
+	text-shadow: none;
+	position: relative;
+}
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #b99759d4;
+	min-width: 1%;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 12px 16px;
+	z-index: 10;
+	cursor: pointer;
+}
+.dropdown-content a{
+	color: black;
+}
+
+/*Navigation bar format ends here */
+
+/*Modal general information starts here*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 200; 
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+	background-color: transparent;
+}
+.modal-content img{
+	margin: auto;
+	width: 100%;
+	max-width: 700px;
+	max-height: 400px;
+	float:left;
+}
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -50px;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	border-radius: 0 3px 3px 0;
+	-webkit-user-select: none;
+	margin-left: 0;
+	z-index:999;
+}
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+.prev:hover,
+.next:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+.close {
+    position: fixed;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+/*Modal general information ends here*/
+
+/*Sign-in Modal information starts here*/
+
+.sign-up-modal a{
+	text-align: center;
+	margin-left:38%;
+	color: #337ab7;
+}
+.sign-up{
+	color: yellow;
+	font-size: 54px;
+	position: center;
+	text-align: center;
+	margin-bottom: 1%
+}
+.alt-login {
+	color: orange;
+	text-align: center;
+}
+.alt-login  a{
+	margin-left: unset;
+}
+.form {
+	border: 3px solid #f1f1f1;
+}
+.display_pic{
+	color: orange;
+}
+.display_pic h3{
+	color: orange;
+	font-size: 25px;
+	text-align: center;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.display_pic input[type=file]{
+	margin-left: 95px;
+	font-size: 15px;
+	margin-bottom: 1%;
+	margin-top: 1%;
+}
+.sign_up_usr_name h3{
+	color: orange;
+	font-size: 25px;
+	text-align: center;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.sign_up_usr_name input[type=text]{
+    min-width: 25%;
+    padding: 1.5% 1%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+	margin-bottom: 1%;
+	margin-top: 1%;
+}
+.email h3{
+	color: orange;
+	font-size: 25px;
+	text-align: center;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+.email input[type=text]{
+    min-width: 25%;
+    padding: 1.5% 1%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+	margin-bottom: 1%;
+	margin-top: 1%;
+}
+.sign_up_password h3{
+	color: orange;
+	font-size: 25px;
+	text-align: center;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.sign_up_password input[type=text], input[type=password] {
+    min-width: 25%;
+    padding: 1.5% 1%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+	margin-bottom: 1%;
+	margin-top: 1%;
+}
+.repeat_password h3{
+	color: orange;
+	font-size: 25px;
+	text-align: center;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+.repeat_password input[type=text], input[type=password] {
+    min-width: 25%;
+    padding: 1.5% 1%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+	margin-bottom: 1%;
+	margin-top: 1%;
+}
+.declerations{
+	text-align: center;
+}
+.declerations a{
+	margin-left: unset;
+}
+.declerations p{
+	color: orange;
+}
+.signupbtn {
+    background-color: orange;
+    color: Black;
+    padding: 4px 6px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left:1%;
+    border: none;
+    cursor: pointer;
+    width: 75px;
+	font-size: 15px;
+	text-decoration: bold;
+}
+
+.signupbtn:hover {
+    opacity: 0.8;
+}
+.cancelbtn {
+    background-color: orange;
+    color: Black;
+    padding: 4px 6px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border: none;
+    cursor: pointer;
+    width: 75px;
+	font-size: 15px;
+	text-decoration: bold;
+}
+
+.cancelbtn:hover {
+    opacity: 0.8;
+}
+/*Sign up Modal information ends here*/
+
+/*Sign-in Modal information starts here*/
+
+.sign-in-modal a{
+	text-align: center;
+	margin-left:38%;
+}
+
+.sign-in{
+	color: yellow;
+	font-size: 54px;
+	position: center;
+	text-align: center;
+	margin-bottom: 1%
+}
+
+.material-icons {
+	position: relative;
+	width: 100%;
+	font-size:96px;
+	color:orange;
+	text-transform: inherit;
+	text-align: center;
+}
+
+.alt-sign-up {
+	color: orange;
+	text-align: center;
+}
+.alt-sign-up  a{
+	margin-left: unset;
+	cursor: pointer;
+}
+
+.sign_in_user_name h3{
+	color: orange;
+	font-size: 25px;
+	text-align: center;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.sign_in_user_name input[type=text]{
+    min-width: 25%;
+    padding: 1.5% 1%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+	margin-bottom: 1%;
+	margin-top: 1%;
+}
+
+.sign_in_password h3{
+	color: orange;
+	font-size: 25px;
+	text-align: center;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.sign_in_password input[type=text], input[type=password] {
+    min-width: 25%;
+    padding: 1.5% 1%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+	margin-bottom: 1%;
+	margin-top: 1%;
+}
+
+.login_btn {
+    background-color: orange;
+    color: Black;
+    padding: 4px 6px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left:1%;
+    border: none;
+    cursor: pointer;
+    width: 75px;
+	font-size: 15px;
+	text-decoration: bold;
+}
+
+.login_btn:hover {
+    opacity: 0.8;
+}
+/*Sign in Modal information ends here*/
+
+/*General Restaurant specific data is detailed below */
+
+.restaurant_specific_data .well{
+	width: 80%;
+	margin-left: 10%;
+	background-color: white;
+}
+
+/*General Restaurant specific data ends here */
+
+/*Restaurant specific general data like name, cusuine etc. starts here */
+
+.general_restaurant_data .restaurant_photos img{
+	border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+	margin-top: 3.4%;
+	width: 200px;
+    height: 160px;
+    max-width: 87%;
+    max-height: 25%;
+}
+
+.general_restaurant_data .restaurant_photos a{
+	text-decoration: none;
+	width: 180px;
+	height: 160px;
+	font-size: 15px;
+	color: white;
+	text-align: center;
+	cursor: pointer;
+	display: inline-block;
+}
+@media only screen and (min-width: 1100px){
+.restaurant_photos h2{
+	display: -webkit-inline-box;
+    background-color: black;
+    color: white;
+    padding-bottom: 87px;
+    padding-top: 39px;
+	padding-left: 18px;
+	padding-right: 18px;
+	border-radius: 5px;
+	max-width: 87%;
+	cursor: pointer;
+}
+}
+@media only screen and (max-width: 1100px){
+.restaurant_photos h2{
+	max-width: 87%;
+	display: -webkit-inline-box;
+    background-color: black;
+    color: white;
+    padding-bottom: 87px;
+    padding-top: 38px;
+	padding-left: 18px;
+	padding-right: 18px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+}
+/*Restaurant specific genneral data like name, cusuine etc. ends here */
+/*Restaurant rating format startes here */
+
+.rating{
+	float: right;
+	padding-top: 4%;
+	font-size: 15px;
+	margin-right: 16px;
+}
+.checked {
+    color: orange;
+}
+
+/*Restaurant rating format ends here */
+
+/*Restaurant heading format starts here*/
+
+.heading{
+	display: block;
+	color: black;
+	text-align: left;
+	padding-left: 16px;
+	font-size: 200%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border: none;
+}
+
+/*Restaurant heading format ends here*/
+
+/*Restaurant Location format starts here*/
+
+.Location{
+	font-size: 150%;
+	padding: 0px 20px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+.Location a{
+	color: black;
+	text-decoration: none;
+}
+
+/*Restaurant Location format ends here*/
+
+/*Restaurant cusuines details starts below*/
+
+.cuisines{
+	color: grey;
+	float: left;
+	margin-bottom:0px;
+	margin-top: 0px;
+	padding-left: 20px;
+	font-size: 15px;
+}
+.cuisines_option{
+	padding-left: 20px;
+	font-size: 15px;
+}
+
+/*Restaurant cusuines details ends here*/
+
+/*Restaurant button details start below*/
+
+.general_restaurant_data .btn{
+	margin-left: 16px;
+	margin-bottom: 4px;
+	cursor: pointer;
+	color: grey;
+	font-size: 15px;
+}
+.general_restaurant_data .btn:hover{
+	background-color: 0.7%;
+}
+
+/*Restaurant button details ends here*/
+
+/*Restaurant second navbar data starts here*/
+.affix {
+	top: 0;
+	width: 97.8%;
+    position: fixed;
+	z-index: 99 !important;
+}
+
+.affix + .container-fluid {
+	padding-top: 70px;
+}
+.page_navigation_bar .navbar{
+	background-color: white;
+	width: 78.3%;
+    margin-left: -1.5%;
+}
+@media only screen and (max-width: 700px){
+	.page_navigation_bar .navbar {
+    background-color: white;
+    width: 102%;
+    margin-left: -20%;
+}
+}
+@media only screen and (min-width: 700px){
+@media only screen and (max-width: 1100px){
+	.page_navigation_bar .navbar {
+    background-color: white;
+    width: 102%;
+    margin-left: -15%;
+	}
+}}
+.page_navigation_bar .well{
+	padding-bottom: 0px;
+}
+
+.page_navigation_bar a{
+    display: block;
+    color: black;
+	font-size: 150%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.page_navigation_bar a:hover:not(.active) {
+    background-color: grey;
+}
+.page_navigation_bar .active{
+	border-bottom: 5px solid orange;
+}
+.page_navigation_bar button{
+	background-color: orange;
+}
+.page_navigation_bar .icon-bar{
+	color: black;
+}
+/*Restaurant second navbar data ends here*/
+
+/*Restaurant overview data starts here */
+
+.overview_data .phone_number{
+	font-size: 20px;
+	margin-left : 16px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+.overview_data .number{
+	font-size: 20px;
+	margin-left : 16px;
+	margin-bottom: 0px;
+	color: orange;
+}
+
+.cusine_options{
+	font-size: 20px;
+	margin-left : 16px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+.available_cuisines{
+	font-size: 15px;
+	margin-left : 16px;
+	margin-bottom: 0px;
+	color: red;
+}
+.cost_options{
+	font-size: 20px;
+	margin-left : 16px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+.expected_cost{
+	font-size: 15px;
+	margin-left : 16px;
+	margin-bottom: 0px;
+}
+.expected_pay{
+	font-size: 15px;
+	margin-left : 16px;
+	margin-bottom: 0px;
+}
+.map_heading{
+	font-size: 20px;
+	margin-left : 16px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+.directions{
+	margin-left : 16px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+.address{
+	float: right;
+	padding-right: 20px;
+}
+.restaurant_address{
+	font-size: 20px;
+	margin-left : 16px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+.address_details{
+	font-size: 15px;
+	margin-left : 16px;
+	margin-bottom: 0px;
+}
+/*Restaurant overview data ends here*/
+
+/*Restaurant official photos format starts here*/
+
+.org-photos{
+	display: block;
+	color: black;
+	text-align: left;
+	padding-left: 16px;
+	font-size: 200%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border: none;
+}
+
+.org_photos_tiles img{
+	border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+	margin-top: 3.4%;
+	width: 200px;
+    height: 160px;
+    max-width: 87%;
+    max-height: 25%;
+}
+.org_photos_tiles .add_more_photos img{
+	position: relative;
+	margin-top: 19.4%;
+}
+.org_photos_tiles .add_more_photos input[type=file]{
+	display: contents;
+}
+@media only screen and (min-width: 1100px){
+.org_photos_tiles h2{
+	display: -webkit-inline-box;
+    background-color: black;
+    color: white;
+    padding-bottom: 87px;
+    padding-top: 39px;
+	padding-left: 18px;
+	padding-right: 18px;
+	border-radius: 5px;
+	max-width: 87%;
+	cursor: pointer;
+}
+}
+@media only screen and (max-width: 1100px){
+.org_photos_tiles h2{
+	max-width: 87%;
+	display: -webkit-inline-box;
+    background-color: black;
+    color: white;
+    padding-bottom: 87px;
+    padding-top: 38px;
+	padding-left: 18px;
+	padding-right: 18px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+}
+
+/*Restaurant official photos format ends here*/
+
+/*Restaurant customer photos format starts here*/
+
+/*Restaurant official photos format starts here*/
+
+.customer_photos_heading{
+	display: block;
+	color: black;
+	text-align: left;
+	padding-left: 16px;
+	font-size: 200%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border: none;
+}
+
+.customer_photos_tiles img{
+	border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+	margin-top: 3.4%;
+	width: 200px;
+    height: 160px;
+    max-width: 87%;
+    max-height: 25%;
+}
+.customer_photos_tiles .add_more_photos img{
+	position: relative;
+	margin-top: 19.4%;
+}
+.customer_photos_tiles .add_more_photos input[type=file]{
+	display: contents;
+}
+@media only screen and (min-width: 1100px){
+.customer_photos_tiles h2{
+	display: -webkit-inline-box;
+    background-color: black;
+    color: white;
+    padding-bottom: 87px;
+    padding-top: 39px;
+	padding-left: 18px;
+	padding-right: 18px;
+	border-radius: 5px;
+	max-width: 87%;
+	cursor: pointer;
+}
+}
+@media only screen and (max-width: 1100px){
+.customer_photos_tiles h2{
+	max-width: 87%;
+	display: -webkit-inline-box;
+    background-color: black;
+    color: white;
+    padding-bottom: 87px;
+    padding-top: 38px;
+	padding-left: 18px;
+	padding-right: 18px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+}
+
+/*Restaurant customer photos format ends here*/
+
+/*Restaurant option to write a review format starts here*/
+
+.write-heading{
+	display: block;
+	color: black;
+	text-align: left;
+	font-size: 200%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 16px;
+	border: none;
+	float: none;
+}
+.write_a_review textarea {
+	padding: 12px;
+	margin-left: 16px;
+	font-size: 15px;
+	border: 1px solid grey;
+	float: none;
+	width: 86%;
+	background: white;
+}
+.review-rating {
+    margin-right: 15%;
+	position: left;
+	float: none;
+	cursor:pointer;
+	padding-left: 16px;
+	font-size: 15px;
+	direction: rtl;
+}
+.review-rating:not(:checked) > input {
+    position:absolute;
+    clip:rect(0,0,0,0);
+}
+.review-rating > input:checked ~ label {
+    color: orange;
+}
+.review-rating:not(:checked) > label:hover,
+.review-rating:not(:checked) > label:hover ~ label,
+.review-rating > input:checked + label:hover,
+.review-rating > input:checked + label:hover ~ label,
+.review-rating > input:checked ~ label:hover,
+.review-rating > input:checked ~ label:hover ~ label,
+.review-rating > label:hover ~ input:checked ~ label {
+    color: orange;
+}
+
+/*Restaurant option to write a review format ends here*/
+
+/*Restaurant option to read a review format starts here*/
+
+.review{
+	display: block;
+	color: black;
+	text-align: left;
+	font-size: 200%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 16px;
+	border: none;
+	float: none;
+}
+
+.view_revews .navbar{
+	background-color: white;
+	width: 78.3%;
+    margin-left: -1.5%;
+}
+.view_revews .well{
+	padding-bottom: 0px;
+}
+
+.view_revews a{
+    display: block;
+    color: black;
+	font-size: 150%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.view_revews a:hover:not(.active) {
+    background-color: grey;
+}
+.view_revews .active{
+	border-bottom: 5px solid orange;
+}
+.view_revews button{
+	background-color: orange;
+}
+.view_revews .icon-bar{
+	color: black;
+}
+.view_revews .img-circle{
+	margin-left: 11px;
+	margin-top: 10px;
+	margin-bottom: 2px;
+	float: left;
+}
+.Name{
+	display: block;
+	color: black;
+	font-size: 100%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border: none;
+	float: none;
+}
+.view_revews .user-rating{
+	padding-top: 15px;
+	padding-left: 2.5%;
+}
+.Number-of-Reviews{
+	font-size: 90%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-right: 4px;
+	float: left;
+}
+.Number-of-reviews-heading{
+	font-size: 90%;
+	float: left;
+}
+.Nunmer-of-Follows{
+	font-size: 90%;
+	float: left;
+	margin-right: 4px;
+}
+.Number-of-followers{
+	font-size: 90%;
+}
+.dividor{
+	margin-top: 0px;
+	color: grey;
+}
+.well .review-button .btn{
+	min-width: 10%;
+	margin-left: 0px;
+	cursor: pointer;
+	color: grey;
+}
+.btn:hover{
+	background-color: 0.7%;
+}
+.view_revews .user-review{
+	text-align: justify;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+/*Restaurant option to read a review format ends here*/

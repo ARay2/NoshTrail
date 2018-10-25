@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="Resturant-creation-styles.css">	
+	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container-fluid wrapper">
+	<div class="layout">
+		<nav class="navbar">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="homepage" href="#">Resturaa</a>
+				</div>
+			</div>
+		</nav>
+		<br>
+		<div class="container-fluid bg-white">
+			<div class="row">
+				<div class="col-sm-3 well">
+					<form action="/resturant_database.txt">
+						<p class="create-new"><b><i class="material-icons">&#xe55f;</i>Create New Restaurant</b></p>
+						<div class="uname">
+								<div class="label">
+									<h2>Overview</h2>
+									<label for="uname">Restaurant Name</label>
+								</div>
+								<input type="text" placeholder="Restaurant Name" name="uname" required>
+							</div>
+						<div class="cuisine">
+								<div class="label">
+									<label for="cuisine">Cuisine</label>
+								</div>
+								<input type="text" placeholder="Enter Cuisine" name="cuisine" required>
+							</div>
+						<div class="number">
+								<div class="label">
+									<label for="number">Phone Number</label>
+								</div>
+								<input type="text" placeholder="Enter Phone Number" name="number" required>
+							</div>
+						<div class="cost">
+								<div class="label">
+									<label for="number">Cost</label>
+								</div>
+								<div class="cost-rating">
+									<input type="radio" id="gbp5" name="rating" value="5" /><label for="gbp5"><i class="fa fa-gbp"></i></label>
+									<input type="radio" id="gbp4" name="rating" value="4" /><label for="gbp4"><i class="fa fa-gbp"></i></label>
+									<input type="radio" id="gbp3" name="rating" value="3" /><label for="gbp3"><i class="fa fa-gbp"></i></label>
+									<input type="radio" id="gbp2" name="rating" value="2" /><label for="gbp2"><i class="fa fa-gbp"></i></label>
+									<input type="radio" id="gbp1" name="rating" value="1" /><label for="gbp1"><i class="fa fa-gbp"></i></label>
+								</div>
+						</div>
+							<div class ="dvidor">
+								<p>
+									<pre>
+									</pre>
+								</p>
+							</div>
+						</div>
+						<div class="payment">
+								<div class="label">
+									<label for="payment">Types of Payment</label>
+								</div>
+								<div class="cash">
+									<input type="checkbox" name="cash">Cash</input>
+								</div>
+								<input type="checkbox" name="card">Card</input>
+							</div>
+						<div class="image">
+							<div class="label">
+								<label for="image">Add an image</label>
+							</div>
+							<input type="file" id="files" name="files" multiple="" accept="image/*">
+							<div id="selectedFiles" class="selectedFiles">
+								<img src="#" width="200" height="160">
+								<br clear="left">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-3 well">
+					<form action="/resturant_database.txt">
+						<div class="uname">
+								<div class="label">
+									<h2>Address</h2>
+									<label for="address">Street Address</label>
+								</div>
+								<input type="text" placeholder="Street Address" name="uname" required>
+							</div>
+						<div class="city">
+								<div class="label">
+									<label for="city">City/Town</label>
+								</div>
+								<input type="text" placeholder="Enter City/Town" name="city" required>
+							</div>
+						<div class="state">
+								<div class="label">
+									<label for="state">State/Province/Region</label>
+								</div>
+								<input type="text" placeholder="Enter State/Province/Region" name="state" required>
+							</div>
+						<div class="country">
+								<div class="label">
+									<label for="country">Country</label>
+								</div>
+								<input type="text" placeholder="Enter Country" name="country" required>
+							</div>
+						<div class="landmark">
+								<div class="label">
+									<label for="landmark">Landmark</label>
+								</div>
+								<input type="text" placeholder="Enter Landmark" name="landmark" required>
+							</div>
+						<div class="zip">
+								<div class="label">
+									<label for="zip">ZIP Code/Postal Code</label>
+								</div>
+								<input type="text" placeholder="Enter ZIP Code/Postal Code" name="zip" required>
+							</div>
+						<div class="map">
+							<canvas id="canvas" width="200" height="160" style="border:1px solid grey; background-color:#a4effb;"></canvas>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-3 col-sm-offset-*">
+					<div class="buttons">
+						<button type="submit" class="submibtn">Submit</button>
+						<button type="button" class="cancelbtn">Cancel</button>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<pre>
+				
+				</pre>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+<script>
+	var selDiv = "";
+		
+	document.addEventListener("DOMContentLoaded", init, false);
+	
+	function init() {
+		document.querySelector('#files').addEventListener('change', handleFileSelect, false);
+		selDiv = document.querySelector("#selectedFiles");
+	}
+		
+	function handleFileSelect(e) {
+		
+		if(!e.target.files || !window.FileReader) return;
+		
+		selDiv.innerHTML = "";
+		
+		var files = e.target.files;
+		var filesArr = Array.prototype.slice.call(files);
+		var selected_few = filesArr.slice(filesArr.length - 3);
+		var flag = 0;
+		selected_few.forEach(function(f) {
+			var reader = new FileReader();
+			reader.onload = function (e) {
+				var html = "<img src=\"" + e.target.result + "\">" + f.name + "<br clear=\"left\"/>";
+				selDiv.innerHTML += html;
+				flag = 1;
+			}
+			reader.readAsDataURL(f);
+		});	
+		var i = filesArr.length - 3;
+		selDiv.innerHTML += "You have selected "+i+" files plus<br clear=\"left\"/>";
+	}
+</script>
+</html>

@@ -1,0 +1,276 @@
+.layout {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	overflow-y: auto;
+	overflow-x: hidden;
+	top: 0;
+	left: 0;
+	background-size: cover;
+	background-position: center; 
+	background-color: #f1efef;
+}
+.layout [class="create-new"]{
+	color: #b71919;
+	font-size: 290%;
+	text-align: center;
+	margin-top: -2%;
+	margin-bottom: 1%;
+    margin-left: none;
+}
+.layout [class="material-icons"]{
+	color: #255925;
+	font-size: 92%;
+	position: center;
+	margin-bottom: 1%;
+}
+.navbar {
+	height: 15%;
+	width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url("IMG-20170622-WA0000.jpg");
+	background-size: cover;
+	background-position: center; 
+	margin-bottom: 55px;
+	z-index:1;
+}
+.navbar [class="homepage"]{
+	display: block;
+	text-align: left;
+	padding: 15px 29px;
+	text-shadow: 2px 2px black;
+	font-size: 300%;
+}
+.navbar-header a{
+	color: yellow;
+	text-decoration: none;
+}
+.navbar li {
+	position: relative;
+    float: left;
+}
+.navbar .active{
+	border-bottom: 5px solid orange;
+}
+.form {
+	border: 3px solid #f1f1f1;
+}
+
+.uname .label{
+	color: #b71919;
+	text-align: left;
+	font-size: 134%;
+	margin-left: 29%
+}
+
+.uname input[type=text] {
+	width: 40%;
+    padding: 0.6%;
+    margin: 1% 29%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+}
+.cuisine .label{
+	color: #b71919;
+	text-align: left;
+	font-size: 134%;
+	margin-left: 29%
+}
+.cuisine input[type=text] {
+    width: 40%;
+    padding: 0.6%;
+    margin: 1% 29%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+}
+.number .label{
+	color: #b71919;
+	text-align: left;
+	font-size: 134%;
+	margin-left: 29%
+}
+.number input[type=text] {
+    width: 40%;
+    padding: 0.6%;
+    margin: 1% 29%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+}
+.cost .label{
+	color: #b71919;
+	text-align: left;
+	font-size: 134%;
+	margin-left: 29%
+}
+.cost-rating {
+	float: left;
+    margin-left: 29%;
+	margin-bottom: 1%;
+	margin-top: 1%;
+	cursor:pointer;
+	direction: rtl;
+}
+.cost-rating:not(:checked) > input {
+    position:absolute;
+    clip:rect(0,0,0,0);
+}
+.cost-rating > input:checked ~ label {
+    color: orange;
+}
+.cost-rating:not(:checked) > label:hover,
+.cost-rating:not(:checked) > label:hover ~ label,
+.cost-rating > input:checked + label:hover,
+.cost-rating > input:checked + label:hover ~ label,
+.cost-rating > input:checked ~ label:hover,
+.cost-rating > input:checked ~ label:hover ~ label,
+.cost-rating > label:hover ~ input:checked ~ label {
+    color: orange;
+}
+.payment .label{
+	color: #b71919;
+	text-align: left;
+	font-size: 134%;
+	margin-left: 29%
+}
+.payment input[type=checkbox] {
+    margin-top: 1%;
+    margin-bottom: 1%;
+	margin-left: 29%;
+	margin-right: 1%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+}
+.image .label{
+	color: #b71919;
+	text-align: left;
+	font-size: 134%;
+	margin-left: 29%
+}
+.image input[type=file]{
+    margin: 1% 29%;
+    display: inline-block;
+}
+.city .label{
+	color: #b71919;
+	text-align: left;
+	font-size: 134%;
+	margin-left: 29%
+}
+
+.city input[type=text] {
+	width: 40%;
+    padding: 0.6%;
+    margin: 1% 29%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+}
+.state .label{
+	color: #b71919;
+	text-align: left;
+	font-size: 134%;
+	margin-left: 29%
+}
+
+.state input[type=text] {
+	width: 40%;
+    padding: 0.6%;
+    margin: 1% 29%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+}
+.country .label{
+	color: #b71919;
+	text-align: left;
+	font-size: 134%;
+	margin-left: 29%
+}
+
+.country input[type=text] {
+	width: 40%;
+    padding: 0.6%;
+    margin: 1% 29%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+}
+.landmark .label{
+	color: #b71919;
+	text-align: left;
+	font-size: 134%;
+	margin-left: 29%
+}
+
+.landmark input[type=text] {
+	width: 40%;
+    padding: 0.6%;
+    margin: 1% 29%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+}
+.zip .label{
+	color: #b71919;
+	text-align: left;
+	font-size: 134%;
+	margin-left: 29%
+}
+
+.zip input[type=text] {
+	width: 40%;
+    padding: 0.6%;
+    margin: 1% 29%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	text-align: left;
+}
+.map{
+	color: #b71919;
+	text-align: left;
+	font-size: 134%;
+	margin-left: 29%
+}
+.buttons button{
+	padding: 1%;
+	width: 115px;
+	font-size: 20px;
+	cursor: pointer;
+	text-align: center;
+	background-color: #b71919;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 3px;
+	margin-left: 29%;
+}
+.buttons [class="cancelbtn"]{
+	background: none;
+	box-shadow: none;
+	margin-left: unset;
+	border: none;
+}
+.image img {
+	width: 200px;
+	height: 160px;
+	float: left;
+	margin-bottom:1%;
+}
+.selectedFiles{
+	margin-left: 29%;
+}

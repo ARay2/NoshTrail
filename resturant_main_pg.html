@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="resturant_index_styles.css">	
+</head>
+<body>
+	<div id="Resturaa" class="layout">
+		<div class="layout-content">
+			<h1><b>Resturaa</b></h1>
+			<form action="/resturant_database.txt">
+				<input type="text" placeholder="Search.." name="search">
+				<button type="submit"><i class="fa fa-search"></i></button>
+			</form>
+		</div>
+	</div>
+	<div class="content-menu">
+		<a id="primaryButton" onclick="ExistingLogic()" class="myBtn_multi" href="#">Sign-In</a>
+		<div class="modal modal_multi">
+			<div class="modal-content">
+				<span class="close close_multi">&times;</span>
+				<form action="/resturant_database.txt">
+					<p class= "sign-in"><b>Sign In</b></p>
+					<i class="material-icons" >account_circle</i>
+					<div class="uname">
+						<h3 for="uname"><b>Username</b></h3>
+						<center><input type="text" placeholder="Enter Username" name="uname" required></center>
+					</div>
+					<div class="psw">
+						<h3 for="psw"><b>Password</b></h3>
+						<center><input type="password" placeholder="Enter Password" name="psw" required></center>
+					</div>
+					<center><button class="login_btn" type="submit">Login</button></center>
+					<a class="remember"><input type="checkbox" checked="checked" name="remember">Remember me</a>
+					<div><a href="#"><span class="psw1">Forgot password?</a></span></div>
+				</form>
+			</div>
+		</div>
+		<div class="modal modal_multi">
+			<div class="modal-content">
+				<span id="sign_up_close" class="close close_multi">&times;</span>
+				<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 col-lg-12">
+				<form action="/resturant_database.txt">
+					<p class="sign-up"><b>Sign Up</b></p>
+					<p class="alt-login"><b>or <a class="btn" id="secondaryButton" >login to your account</a></b></p>
+					<div class="uname">
+						<h3 for="uname"><b>Name</b></h3>
+						<center><input type="text" placeholder="Name" name="uname" required></center>
+					</div>
+					<div class="email">
+						<h3 for="email"><b>Email</b></h3>
+						<center><input type="text" placeholder="Enter Email" name="email" required></center>
+					</div>
+					<div class="psw">
+						<h3 for="psw"><b>Password</b></h3>
+						<center><input type="password" placeholder="Enter Password" name="psw" required></center>
+					</div>
+					<div class="rpsw">
+						<h3 for="psw"><b>Repeat Password</b></h3>
+						<center><input type="password" placeholder="Repeat Password" name="psw-repeat" required></center>
+					</div>
+					<div class="display_pic">
+						<h3 for="udp"><b>Profile Picture</b></h3>
+						<center><input type="file" name="pic" accept="image/*"></center>
+					</div>
+					<div class="declerations">        
+						<input type="checkbox" checked="checked" name="remember">
+						<a class="remember">Remember me</a>
+						<p class="tndc"><b>By creating an account you agree to our <a href="#">Terms & Conditions</a></b></p>
+					</div>
+					<div class="buttons">
+						<center><button type="button" class="cancelbtn">Cancel</button>
+						<button type="submit" class="signupbtn">Sign Up</button></center>
+					</div>
+				</form>
+				</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<i class="glyphicon glyphicon-user"></i>
+		<a href="#" id="myBtn"><b><i class="fa fa-chevron-down"></i></b></a>
+		<div class="dropdown-content" id="myDropdown">
+			<p><a class="myBtn_multi">Sign UP</a></p>
+			<p><a href="#contact-us">Contact Us</a></p>
+		</div>
+	</div>
+	<script>
+		var dropdown = document.getElementById('myDropdown');
+		var btn = document.getElementById("myBtn");
+		var counter = 0;
+		btn.onclick = function() {
+			if (counter == 0){
+				dropdown.style.display = "block";
+				counter = 1;
+			}
+			else {
+				dropdown.style.display = "none";
+				counter = 0;
+			}
+		}
+		var modalparent = document.getElementsByClassName("modal_multi");
+
+		var btn = document.getElementsByClassName("myBtn_multi");
+		var btn1 = document.getElementById("secondaryButton")
+		var span = document.getElementsByClassName("close_multi");
+		
+		
+		
+		function setDataIndex() {
+
+            for (i = 0; i < btn.length; i++)
+            {
+                btn[i].setAttribute('data-index', i);
+                modalparent[i].setAttribute('data-index', i);
+                span[i].setAttribute('data-index', i);
+            }
+        }
+		
+		for (i = 0; i < btn.length; i++)
+        {
+            btn[i].onclick = function() {
+				dropdown.style.display = "none";
+				counter = 0;
+                var ElementIndex = this.getAttribute('data-index');
+                modalparent[ElementIndex].style.display = "block";
+            };
+			
+			btn1.onclick = function() {
+				document.getElementById('sign_up_close').click()
+				document.getElementById('primaryButton').click()
+            };
+
+            // When the user clicks on <span> (x), close the modal
+            span[i].onclick = function() {
+                var ElementIndex = this.getAttribute('data-index');
+                modalparent[ElementIndex].style.display = "none";
+            };
+
+        }
+		window.onload = function() {
+
+            setDataIndex();
+        };
+        window.onclick = function(event) {
+            if (event.target === modalparent[event.target.getAttribute('data-index')]) {
+                modalparent[event.target.getAttribute('data-index')].style.display = "none";
+            }
+
+            // OLD CODE
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+	</script>
+</body>
+</html>

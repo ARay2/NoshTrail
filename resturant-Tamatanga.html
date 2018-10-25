@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="resturant-Tamatanga-style.css">	
+</head>
+<body>
+	<div class="restaurant_page">
+	<div class="container-fluid bg-white">
+		<div class="layout">
+			<div class="row">
+<!-- -------------------------------------------The content of navigation bar at the top of the page starts here------------------------------------------- -->
+				<div class="top_navigation_bar">
+				<nav class="navbar">
+					<div class="col-sm-3 col-lg-12 well">
+						<div class="navbar-header">
+							<div class="homepage">
+								<a class="link_main_pg" href="#">Resturaa</a>
+								<div class="menu">
+								<i class="glyphicon glyphicon-user">
+								<a href="#" class="dropdown_btn" id="dropdown_btn"><b><i class="fa fa-chevron-down"></i></b></a>
+								<div class="dropdown-content" id="myDropdown">
+									<p><a id="primaryButton1" onclick="ExistingLogic()" class="sign_up_btn">Sign UP</a></p>
+									<p><a href="#contact-us">Contact Us</a></p>
+								</div>
+								</i>
+								<a id="primaryButton" onclick="ExistingLogic()" class="sign_in_btn" href="#">Sign-In</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</nav>
+				</div>
+			</div>
+<!-- -------------------------------------------The content of navigation bar at the top of the page ends here--------------------------------------------- -->
+
+<!-- -------------------------------------------The content of sign-in modal that opens on clicking the sign-in button------------------------------------- -->
+			<div id="sign_in_modal" class="modal">
+			<div class="modal-content">
+				<span id="close_sign_in" class="close">&times;</span>
+				<form class="sign-in-modal" action="/resturant_database.txt">
+					<p class= "sign-in"><b>Sign In</b></p>
+					<i class="material-icons" >account_circle</i>
+					<p class="alt-sign-up"><b>or <a class="btn1" id="secondaryButton1" >Sign Up</a></b></p>
+					<div class="sign_in_user_name">
+						<center><h3 for="uname"><b>Username</b></h3></center>
+						<center><input type="text" placeholder="Enter Username" name="uname" required></center>
+					</div>
+					<div class="sign_in_password">
+						<center><h3 for="psw"><b>Password</b></h3></center>
+						<center><input type="password" placeholder="Enter Password" name="psw" required></center>
+					</div>
+					<center><button class="login_btn" type="submit">Login</button></center>
+					<a class="remember"><input type="checkbox" checked="checked" name="remember">Remember me</a>
+					<div><a href="#"><span class="psw1">Forgot password?</a></span></div>
+				</form>
+			</div>
+		</div>
+<!-- -----------------------------------The content of sign-in modal that opens on clicking the sign-in button ends here----------------------------------- -->
+
+<!-- -------------------------------------------The content of sign-up modal that opens on clicking the sign-up button------------------------------------- -->
+			<div id="sign_up_modal" class="modal">
+				<div class="modal-content">
+					<span id="sign_up_close" class="close">&times;</span>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-3 col-lg-12">
+								<form class="sign-up-modal" action="/resturant_database.txt">
+									<p class="sign-up"><b>Sign Up</b></p>
+									<p class="alt-login"><b>or <a class="btn" id="secondaryButton" >login to your account</a></b></p>
+									<div class="sign_up_usr_name">
+										<center><h3 for="uname"><b>Name</b></h3></center>
+										<center><input type="text" placeholder="Name" name="uname" required></center>
+									</div>
+									<div class="email">
+										<center><h3 for="email"><b>Email</b></h3></center>
+										<center><input type="text" placeholder="Enter Email" name="email" required></center>
+									</div>
+									<div class="sign_up_password">
+										<center><h3 for="psw"><b>Password</b></h3></center>
+										<center><input type="password" placeholder="Enter Password" name="psw" required></center>
+									</div>
+									<div class="repeat_password">
+										<center><h3 for="psw"><b>Repeat Password</b></h3></center>
+										<center><input type="password" placeholder="Repeat Password" name="psw-repeat" required></center>
+									</div>
+									<div class="display_pic">
+										<center><h3 for="udp"><b>Profile Picture</b></h3></center>
+										<center><input type="file" name="pic" accept="image/*"></center>
+									</div>
+									<div class="declerations">        
+										<input type="checkbox" checked="checked" name="remember">
+										<a class="remember">Remember me</a>
+										<p class="tndc"><b>By creating an account you agree to our <a href="#">Terms & Conditions</a></b></p>
+									</div>
+									<div class="buttons">
+										<center><button type="button" class="cancelbtn">Cancel</button>
+										<button type="submit" class="signupbtn">Sign Up</button></center>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+<!-- -----------------------------------The content of sign-up modal that opens on clicking the sign-up button ends here----------------------------------- -->
+
+		<br>
+			<div class="restaurant_specific_data">
+				<div class="container-fluid bg-white">
+					<div class="row">
+<!-- -------------------------------------------------------The content of general Restaurant introductory data-------------------------------------------- -->
+						<div class="col-sm-3 well">
+							<div class="general_restaurant_data">
+								<div class="restaurant_photos">
+									<img src="IMG-20170622-WA0000.jpg" onclick="org_photos_modal_open();org_current_slide(1)">
+									<img src="IMG-20180531-WA0005.jpg" onclick="org_photos_modal_open();org_current_slide(2)">
+									<img src="IMG-20180531-WA0003.jpg" onclick="org_photos_modal_open();org_current_slide(3)">
+									<img src="IMG-20180531-WA0010.jpg" onclick="org_photos_modal_open();org_current_slide(4)">
+									<h2 onclick="org_photos_modal_open();org_current_slide(4)">+ 51 Photos</h2>
+								</div>
+								<div class="rating">
+									<p><b>Rating</b></p>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								</div>
+								<p class = "heading"><scope>Tamatanga</scope></p>
+								<p class="Location"><a href="resturants-list.html">Sheffield</a></p>
+								<p class="cuisines"> CUISINES: </p><p class="cuisines_option">  ITALIAN</p>
+								<hr width="95%">
+								<div class="button">
+									<button class="btn">Been Here</button>
+									<button class="btn">Add a Review</button>
+									<button class="btn"><span class="fa fa-star"></span> Rate</button>
+								</div>
+							</div>
+						</div>
+<!-- -----------------------------------------------The content of general Restaurant introductory data ends here------------------------------------------ -->
+
+						
+<!-- -----------------------------------------------The content of Restaurant Overview navigation bar starts here------------------------------------------ -->
+						<div class="page_navigation_bar">
+							<div class="col-sm-1 well">
+								<nav class="navbar"  data-spy="affix" data-offset-top="600">
+									<div class="container-fluid">
+										<div class="navbar-header">
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" >
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>                        
+											</button>
+											<li><a class="navbar-brand active" href="javascript:void(0)"><b>Overview</b></a></li>
+										</div>
+										<div class="collapse navbar-collapse" id="myNavbar">
+											<ul class="nav navbar-nav">
+												<li><a class="navbar-review" href="javascript:void(0)">Review</a></li>
+												<li><a class="navbar-photos" href="javascript:void(0)">Photos</a></li>
+											</ul>
+										</div>
+									</div>
+								</nav>
+							</div>
+						</div>
+<!-- -----------------------------------------------The content of Restaurant Overview navigation bar ends here-------------------------------------------- -->
+
+<!-- -------------------------------------------------------The content of Restaurant Overview data starts here-------------------------------------------- -->
+
+						<div class="overview_data">
+							<div class="well col-sm-1">
+								<div class="container-fluid">
+									<div class="col-sm-1 col-lg-3">
+										<div class="container-fluid">
+											<div class="Details">
+												<b><p class = "phone_number"><scope>Phone Number</scope></p></b>
+												<p class="number"><b>00 12345678910</b></p>
+												<b><p class="cusine_options">Cuisines</p></b>
+												<p class="available_cuisines">Italian</p>
+												<b><p class="cost_options">Cost</p></b>
+												<p class="expected_cost">$$</p>
+												<p class="expected_pay">Cash & Card</p>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-1 col-lg-3">
+										<div class="container-fluid">
+											<div class="map">
+												<b><p class="map_heading">Location</p></b>
+												<canvas id="canvas" width="200" height="160" style="border:1px solid grey; max-width: 87%; background-color:#a4effb;"></canvas>
+												<p class="directions"><b>Click on Map to go to</b></p>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-1 col-lg-4">
+										<div class="container-fluid">
+											<div class="address">
+												<p class="restaurant_address"><b>Address</b></p>
+												<p class="address_details">521 - 523 Ecclesall Rd, South Yorkshire S11 8PR</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+<!-- -------------------------------------------------------The content of Restaurant Overview data nds here----------------------------------------------- -->
+
+<!-- -----------------------------------------------------The content of Restaurant official Photos starts here-------------------------------------------- -->
+						<div class="official_photos">
+							<div class="col-sm-3 well">
+								<div class="general_restaurant_data">
+									<p class="org-photos">Photos</p>
+									<div class="org_photos_tiles">
+										<img src="IMG-20170622-WA0000.jpg" onclick="org_photos_modal_open();org_current_slide(1)">
+										<img src="IMG-20180531-WA0005.jpg" onclick="org_photos_modal_open();org_current_slide(2)">
+										<img src="IMG-20180531-WA0003.jpg" onclick="org_photos_modal_open();org_current_slide(3)">
+										<img src="IMG-20180531-WA0010.jpg" onclick="org_photos_modal_open();org_current_slide(4)">
+										<h2 onclick="org_photos_modal_open();org_current_slide(4)">+ 51 Photos</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+<!-- -----------------------------------------------------The content of Restaurant official Photos ends here---------------------------------------------- -->
+
+<!-- -----------------------------------------------------The content of Restaurant customer Photos starts here-------------------------------------------- -->
+
+						<div class="customer_photos">
+							<div class="col-sm-3 well">
+								<div class="general_restaurant_data">
+									<p class="customer_photos_heading">Customer Photos</p>
+									<div class="customer_photos_tiles">
+										<img src="IMG-20180531-WA0009.jpg" onclick="customer_photos_modal_open();current_slide(1)">
+										<img src="IMG-20180531-WA0020.jpg" onclick="customer_photos_modal_open();current_slide(2)">
+										<img src="IMG-20180531-WA0012.jpg" onclick="customer_photos_modal_open();current_slide(3)">
+										<h2 onclick="customer_photos_modal_open();current_slide(3)">+ 51 Photos</h2>
+										<label class="add_more_photos"><img src="add_photos.jpg"><input type="file" id="File" accept="image/*" multiple></label> 
+									</div>
+								</div>
+							</div>
+						</div>
+<!-- -----------------------------------------------------The content of the option to write a review starts here------------------------------------------ -->
+            						
+						<div class="write_a_review">
+							<div class="col-sm-3 well">
+								<p class="write-heading">Write a Review</p>
+								<div class="review-rating">
+									<input type="radio" id="star5" name="rating" value="5" /><label for="star5"><i class="fa fa-star"></i></label>
+									<input type="radio" id="star4" name="rating" value="4" /><label for="star4"><i class="fa fa-star"></i></label>
+									<input type="radio" id="star3" name="rating" value="3" /><label for="star3"><i class="fa fa-star"></i></label>
+									<input type="radio" id="star2" name="rating" value="2" /><label for="star2"><i class="fa fa-star"></i></label>
+									<input type="radio" id="star1" name="rating" value="1" /><label for="star1"><i class="fa fa-star"></i></label>
+								</div>
+								<form action="/reviews.txt">
+									<textarea name="review" id="myBtn" placeholder="Help other people know the food you know..."></textarea>
+								</form>
+								<button class="btn" type="submit" style="background: orange; border: none; cursor: pointer; text-align: center; margin-left: 16px; margin-top: 8px; color: black;">Add Your Review</i></button>
+							</div>
+						</div>
+<!-- -----------------------------------------------------The content of the option to write a review ends here-------------------------------------------- -->
+
+
+<!-- -----------------------------------------------------The content of the option to view the reviews starts here---------------------------------------- -->
+
+						<div class="view_revews">
+							<div class="col-sm-1 well">
+								<p class="review">Reviews</p>
+								<nav class="navbar">
+									<div class="container-fluid">
+										<div class="navbar-header">
+											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar1" >
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>
+												<span class="icon-bar"></span>                        
+											</button>
+											<li><a class="navbar-brand active" href="#"><b>Popular <small color="grey">1</small></b></a></li>
+										</div>
+										<div class="collapse navbar-collapse" id="myNavbar1">
+											<ul class="nav navbar-nav">
+												<li><a href="#">All Reviews <small color="grey">925</small></a></li>
+												<li><a href="#">Blogs <small color="grey">32</small></a></li>
+											</ul>
+										</div>
+									</div>
+								</nav>
+								<p><img src="restaurants-collage.png" class="img-circle" height="80" width="80" style="margin:8px;"></p>
+								<p class = "Name"><b><scope>Avanthika Singhu</scope></b></p>
+								<p class="Number-of-Reviews">153</p><p class="Number-of-reviews-heading">Reviews,</p><p class="Nunmer-of-Follows">12</p><p class="Number-of-followers">Followers</p>
+								<div class="review-button"><button class="btn">Follow</button></div>
+								<div class="user-rating">
+									<p><b>Rated</b></p>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								</div>
+								<hr width="95%" class="dividor">
+								<div class="user-review">
+									<p>This is a mock review. This has been created to check that the website is workiing as expected.This is a mock review. This has been created to check that the website is workiing as expected.This is a mock review. This has been created to check that the website is workiing as expected.This is a mock review. This has been created to check that the website is workiing as expected.This is a mock review. This has been created to check that the website is workiing as expected.This is a mock review. This has been created to check that the website is workiing as expected.</p>
+								</div>	
+							</div>
+						</div>
+
+<!-- -----------------------------------------------------The content of the option to view the reviews ends here------------------------------------------ -->
+					</div>
+				</div>
+<!-- -----------------------------------------------------The content of the modals start here------------------------------------------------------------- -->
+
+				<div id="myModal" class="modal">
+					<span class="close cursor" onclick="org_photos_modal_close()">&times;</span>
+					<a class="prev" onclick="org_slide_increment(-1)">&#10094;</a>
+					<div class="modal-content">
+						<div class="mySlides">
+							<img src="IMG-20170622-WA0000.jpg" style="width:100%">
+						</div>
+						<div class="mySlides">
+							<img src="IMG-20180531-WA0005.jpg" style="width:100%">
+						</div>
+						<div class="mySlides">
+							<img src="IMG-20180531-WA0003.jpg" style="width:100%">
+						</div>
+						<div class="mySlides">
+							<img src="IMG-20180531-WA0010.jpg" style="width:100%">
+						</div>
+						<div class="mySlides">
+							<img src="IMG-20180531-WA0007.jpg" style="width:100%">
+						</div>
+						<div class="mySlides">
+							<img src="IMG-20180531-WA0006.jpg" style="width:100%">
+						</div>
+					</div>
+					<a class="next" onclick="org_slide_increment(1)">&#10095;</a>
+				</div>
+			</div>
+<!-- -----------------------------------------------------The content of the modals ends here-------------------------------------------------------------- -->
+
+<!-- -----------------------------------------------------The content of the second modals ends here------------------------------------------------------- -->
+
+				<div id="myModal1" class="modal">
+					<span class="close cursor" onclick="customer_photos_modal_close()">&times;</span>
+					<a class="prev" onclick="slide_increment(-1)">&#10094;</a>
+					<div class="modal-content">
+						<div class="mySlides1">
+							<img src="IMG-20180531-WA0009.jpg" style="width:100%">
+						</div>
+						<div class="mySlides1">
+							<img src="IMG-20180531-WA0020.jpg" style="width:100%">
+						</div>
+						<div class="mySlides1">
+							<img src="IMG-20180531-WA0012.jpg" style="width:100%">
+						</div>
+						<div class="mySlides1">
+							<img src="IMG-20180531-WA0004.jpg" style="width:100%">
+						</div>
+						<div class="mySlides1">
+							<img src="IMG-20180531-WA0007.jpg" style="width:100%">
+						</div>
+						<div class="mySlides1">
+							<img src="IMG-20180531-WA0006.jpg" style="width:100%">
+						</div>
+					</div>
+					<a class="next" onclick="slide_increment(1)">&#10095;</a>
+				</div>
+			</div>
+<!-- -------------------------------------------------The content of the second modals ends here----------------------------------------------------------- -->
+			<div class="footnote">
+				<pre style="border: none;">
+				
+				</pre>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+<script>
+		var dropdown = document.getElementById('myDropdown');
+		var btn = document.getElementById("dropdown_btn");
+		var counter = 0;
+		btn.onclick = function() {
+			if (counter == 0){
+				dropdown.style.display = "block";
+				counter = 1;
+			}
+			else {
+				dropdown.style.display = "none";
+				counter = 0;
+			}
+		}
+</script>
+<script>
+		var content2 = document.getElementById('sign_in_modal');
+		var btn1 = document.getElementById("primaryButton");
+		var btn3 = document.getElementById("secondaryButton");
+		var btn5 = document.getElementById("secondaryButton1");
+		
+		var close_btn = document.getElementById("close_sign_in");
+		close_btn.onclick = function(){
+			content2.style.display = "none";
+		}
+		
+		var content1 = document.getElementById("sign_up_modal");
+		var btn2 = document.getElementById("primaryButton1")
+		
+		btn2.onclick = function() {
+			dropdown.style.display = "none";
+			counter = 0;
+			content1.style.display = "block";
+			btn3.onclick = function() {
+				document.getElementById('sign_up_close').click()
+				document.getElementById('primaryButton').click()
+            };
+		}
+		var close_btn1 = document.getElementById("sign_up_close");
+		close_btn1.onclick = function(){
+			content1.style.display = "none";
+		}
+		var btn4 = document.getElementById("myBtn");
+        btn4.onclick = function() {
+            content2.style.display = "block";
+        }
+		btn1.onclick = function() {
+			dropdown.style.display = "none";
+			counter = 0;
+			content2.style.display = "block";
+			btn5.onclick = function() {
+				document.getElementById('close_sign_in').click()
+				document.getElementById('primaryButton1').click()
+            };
+		}
+</script>
+<script>
+		var content=document.getElementById('myModal');
+		function org_photos_modal_open() {
+			content.style.display = "block";
+		}
+
+		function org_photos_modal_close() {
+			content.style.display = "none";
+		}
+
+		var org_slide_number = 1;
+		org_display_slides(org_slide_number);
+
+		function org_slide_increment(n) {
+			org_display_slides(org_slide_number += n);
+		}
+
+		function org_current_slide(n) {
+			org_display_slides(org_slide_number = n);
+		}
+
+		function org_display_slides(n) {
+			var i;
+			var org_slides = document.getElementsByClassName("mySlides");
+			if (n > org_slides.length) {
+				org_slide_number = 1
+			}
+			if (n < 1) {
+				org_slide_number = org_slides.length
+			}
+			for (i = 0; i < org_slides.length; i++) {
+				org_slides[i].style.display = "none";
+			}
+			org_slides[org_slide_number-1].style.display = "block";
+		}
+</script>
+<script>
+		var content3=document.getElementById('myModal1');
+		function customer_photos_modal_open() {
+			content3.style.display = "block";
+		}
+
+		function customer_photos_modal_close() {
+			content3.style.display = "none";
+		}
+
+		var slide_number = 1;
+		display_slides(slide_number);
+
+		function slide_increment(n) {
+			display_slides(slide_number += n);
+		}
+
+		function current_slide(n) {
+			display_slides(slide_number = n);
+		}
+
+		function display_slides(n) {
+			var i;
+			var slides = document.getElementsByClassName("mySlides1");
+			if (n > slides.length) {
+				slide_number = 1
+			}
+			if (n < 1) {
+				slide_number = slides.length
+			}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			slides[slide_number-1].style.display = "block";
+		}
+</script>
+<script>
+		var modal = document.getElementById('sign_in_modal');
+		var modal1 = document.getElementById("sign_up_modal");
+		var modal2 = document.getElementById("myModal");
+		var modal3 = document.getElementById("myModal1");
+		window.onload = function() {
+
+            setDataIndex();
+        };
+		
+		
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+			
+			if (event.target === modal1) {
+                modal1.style.display = "none";
+            }
+			
+			if (event.target == modal2) {
+				modal2.style.display = "none";
+			}
+			
+			if (event.target == modal3) {
+				modal3.style.display = "none";
+			}
+        };
+</script>
+<script>
+    var btn20 = document.getElementById("photo_click");
+    var video = document.querySelector('video');
+    var canvas = document.getElementById('photo_clicked');
+    var ctx = canvas.getContext('2d');
+    var localMediaStream = null;
+    btn20.onclick = function(){
+        video.addEventListener('click', snapshot, false);
+        var errorCallback = function(e) {
+        console.log('Rejected!', e);
+    };
+    navigator.getUserMedia({video: true}, function(stream) {
+    btn20.style.display = "none";
+    video.src = window.URL.createObjectURL(stream);
+    localMediaStream = stream;
+    }, errorCallback);
+    function snapshot() {
+        if (localMediaStream) {
+            ctx.drawImage(video, 0, 0, 200, 160);
+
+            //------ Sukrati | img --> #photoCaptured (Alao, in <img> tag id=#photoCaptured is added)
+            document.querySelector("#photoCaptured").src = canvas.toDataURL('image/png');
+        }
+    }
+    }
+</script>
+</html>

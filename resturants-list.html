@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="resturants-list-style.css">	
+</head>
+<body>
+	<div class="container-fluid wrapper">
+	<div class="layout">
+		<nav class="navbar">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="homepage" href="#">Resturaa</a>
+				</div>
+			</div>
+		</nav>
+		<h2>Sheffield Restaurants, Yorkshire</h2>
+		<div class="container-fluid">    
+			<div class="row content">
+				<div class="col-sm-2 sidenav">
+					<div class="sear_option">
+					<form action="/resturant_database.txt">
+						<input type="text" placeholder="Search.." name="search">
+						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+					</div>
+					<div class="f-heading">
+						<h3>Filters</h3>
+					</div>
+					<div class="book">
+						<h5><input type="checkbox" checked="checked" name="remember"></input>Book a Table</h5>
+						<hr width="90%">
+					</div>
+					<div class="sort-by">
+						<div class="sort-heading">
+							<h3>Sort By</h3>
+						</div>
+						<div class="classifications">
+							<h5><a class="active" href="#"><b>Popularity </b><small><b>- high to low</b></small></a></h5>
+							<h5><a href="#">Rating <small>- high to low</small></a></h5>
+							<h5><a href="#">Cost <small>- high to low<small></a></h5>
+							<h5><a href="#">Cost <small>- low to high</small></a></h5>
+							<h5><a href="#">Recently Added <small>- new to old</small></a></p>
+						</div>
+					</div>
+					<div class="category">
+						<div class="category-heading">
+							<h3>Category</h3>
+						</div>
+						<div class="options">
+							<h5><a class="active" href="#">Dine-Out <small>64</small></a></h5>
+							<h5><a href="#">Take-Away <small>9</small></a></h5>
+							<h5><a href="#">Delivery <small>21</small></a></h5>
+							<h5><a href="#">Drinks & Nightlife <small>9</small></a></h5>
+						</div>
+					</div>
+					<div class="map_settings">
+						<div class="map_settings">
+							<h3>Map Radius</h3>
+						</div>
+						<div class="slidecontainer">
+							<input type="range" min="1" max="10" value="50" class="slider" id="range">
+							<p>Radius: <span id="slider"></span></p>
+							<button class="btn"><b>View on Map</b></button>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-8 text-left"> 
+					<div class="col-sm-3 well">
+						<p class="image"><a href="resturant-Tamatanga.html"><img src="restaurants-collage.png" width="150" height="120"></a></p>
+						<div class="rating">
+							<h4><b>Rating</b></h4>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</div>
+						<div class="Details">
+							<h3><b><a href="resturant-Tamatanga.html">Tamatanga</a></b></h3>
+							<h4><a href="resturants-list.html">Sheffield</a></h4>
+							<h5>521 - 523 Ecclesall Rd, South Yorkshire S11 8PR</h5>
+						</div>
+						<hr width="95%">
+						<div class="Table">
+							<button class="btn"><b><a href="resturant-Tamatanga.html">View Resturant</a></b></button>
+							<p class="cuisines"> CUISINES: </p><p class="h-cuisines">  ITALIAN</p>
+							<p class="cost">COST:</p><p class="h-cost"> $$</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footnote">
+				<pre style="border: none; background-color: unset;">
+				
+				</pre>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+<script>
+	var slider = document.getElementById("range");
+	var output = document.getElementById("slider");
+	output.innerHTML = slider.value;
+	
+	slider.oninput = function() {
+	output.innerHTML = this.value;
+	}
+</script>
+</html>
